@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot name="stereo" xmlns:xacro="http://ros.org/wiki/xacro" >
+  
+  <!-- Set up definitions of parts of the robot body -->  
+
+  <xacro:include filename="$(find basler_camera_gazebo)/xacro/left_camera.xacro" />
+  <xacro:include filename="$(find basler_camera_gazebo)/xacro/right_camera.xacro" />
+
+  <property name="robot_name" value="stereo"/>
+  
+  <link name="world"/>
+
+  <xacro:left_camera prefix="${robot_name}" parent="world"/>-->
+  <xacro:right_camera prefix="${robot_name}" parent="left_camera_link"/>
+
+
+</robot>
